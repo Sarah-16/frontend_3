@@ -3,7 +3,24 @@ const inputs = document.querySelectorAll(".form-container input");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  let values = {};
   inputs.forEach((input) => {
-    console.log(input.value);
+    values[input.name] = input.value;
   });
+  console.log(values);
 });
+
+function validate() {
+  if (document.myForm.firstName.values == "") {
+    alert("Please provide your name!");
+    document.input.firstName.focus();
+    return false;
+  }
+  if (document.myForm.lastName.values == "") {
+    alert("Please provide your Email!");
+    document.myForm.lastName.focus();
+    return false;
+  }
+
+  return true;
+}
