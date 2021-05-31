@@ -3,10 +3,24 @@ const inputs = document.querySelectorAll(".form-container input");
 
 form.addEventListener("submit", e => {
   e.preventDefault();
+  // console.log(document.myForm.firstName.value);
+  validate();
   let values = {};
   inputs.forEach(input => {
-    // console.log(`input.name: ${input.name}  input.value: ${input.value}`);
     values[input.name] = input.value;
   });
   console.log(values);
 });
+
+function validate() {
+  if (document.myForm.firstName.value == "") {
+    alert("Please provide your name!");
+    // document.input.firstName.focus();
+    return false;
+  }
+  if (document.myForm.lastName.value == "") {
+    alert("Please provide your Email!");
+    // document.myForm.lastName.focus();
+    return false;
+  }
+}
