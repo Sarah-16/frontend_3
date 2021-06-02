@@ -1,26 +1,22 @@
 const form = document.querySelector(".form-container form");
-const inputs = document.querySelectorAll(".form-container input");
+const input = document.querySelectorAll(".form-container input");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-  // console.log(document.myForm.firstName.value);
-  validate();
-  let values = {};
-  inputs.forEach(input => {
-    values[input.name] = input.value;
+  input.forEach((input) => {
+    if (!input.value) {
+      input.parentElement.classList.add("error");
+    } else {
+      input.parentElement.classList.remove("error");
+    }
   });
-  console.log(values);
 });
 
-function validate() {
-  if (document.myForm.firstName.value == "") {
-    alert("Please provide your name!");
-    // document.input.firstName.focus();
-    return false;
-  }
-  if (document.myForm.lastName.value == "") {
-    alert("Please provide your Email!");
-    // document.myForm.lastName.focus();
-    return false;
-  }
-}
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let value = {};
+  input.forEach((input) => {
+    value[input.name] = input.value;
+  });
+  console.log(value);
+});
