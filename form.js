@@ -15,12 +15,12 @@ form.addEventListener("submit", e => {
 function validate() {
   if (document.myForm.firstName.value == "") {
     alert("Please provide your name!");
-    // document.input.firstName.focus();
+    document.querySelector("#first-name").focus();
     return false;
   }
   if (document.myForm.lastName.value == "") {
     alert("Please provide your Email!");
-    // document.myForm.lastName.focus();
+    document.querySelector("#last-name").focus();
     return false;
   }
 }
