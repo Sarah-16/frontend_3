@@ -188,3 +188,13 @@ html {
     font-size: 0.7rem;
   }
 }
+
+.show,
+.hide {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+.show {
+  display: none;
+}
